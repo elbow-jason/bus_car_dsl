@@ -1,5 +1,5 @@
-defmodule BusCar.Type.Binary do
-  @behaviour BusCar.Type
+defmodule BusCarDsl.Type.Binary do
+  @behaviour BusCarDsl.Type
   def type,       do: :boolean
   def properties, do: nil
 end

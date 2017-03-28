@@ -1,4 +1,4 @@
-defmodule BusCar.Type do
+defmodule BusCarDsl.Type do
 
   @callback type() :: atom
   @callback properties() :: map | nil

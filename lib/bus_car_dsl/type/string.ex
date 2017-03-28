@@ -1,5 +1,5 @@
-defmodule BusCar.Type.String do
-  @behaviour BusCar.Type 
+defmodule BusCarDsl.Type.String do
+  @behaviour BusCarDsl.Type 
   def type,       do: :string
   def properties, do: nil
 end
