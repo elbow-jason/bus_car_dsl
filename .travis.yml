@@ -3,10 +3,7 @@ elixir:
   - 1.4.0
 otp_release:
   - 19.1
-services:
-- elasticsearch
 before_script:
-  - sleep 10 # for elasticsearch startup time
   - mix deps.get
 script:
   - mix test
