@@ -138,8 +138,8 @@ defmodule BusCarDsl do
   @doc """
   The map_rule macro defines a parse_map/2 function for the calling module.
   An example:
-    `map_rule(:filter, :term)` injects a parse_map/2 function with the signature
-    `def parse_map([:filter, :term | rest], acc) do`
+    `map_rule(:filter, :term)` injects a parse_map/2 function with the
+    signature `def parse_map([:filter, :term | rest], acc) do`
   """
   defmacro map_rule(root, stem) do
     quote do
