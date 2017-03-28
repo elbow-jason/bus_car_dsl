@@ -1,7 +1,7 @@
 defmodule BusCarDslRegexpTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Regexp
-  alias BusCar.Dsl.Regexp
+  doctest BusCarDsl.Regexp
+  alias BusCarDsl.Regexp
 
   test "regexp map" do
     result = Regexp.parse([:regexp, "name", ".jason"], %{})

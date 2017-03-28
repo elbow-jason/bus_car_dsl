@@ -1,7 +1,7 @@
 defmodule BusCarDslRangeTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Range
-  alias BusCar.Dsl.Range
+  doctest BusCarDsl.Range
+  alias BusCarDsl.Range
 
   test "range less than" do
     result = Range.parse([:range, "name", :lt, 6], %{})

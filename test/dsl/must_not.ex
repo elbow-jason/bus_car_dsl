@@ -1,5 +1,5 @@
-defmodule BusCar.Dsl.MustNot do
-  use BusCar.Dsl
+defmodule BusCarDsl.MustNot do
+  use BusCarDsl
 
   @key :must_not
 

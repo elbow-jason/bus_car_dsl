@@ -1,5 +1,5 @@
-defmodule BusCar.Dsl.MultiMatch do
-  alias BusCar.Dsl.MultiMatch
+defmodule BusCarDsl.MultiMatch do
+  alias BusCarDsl.MultiMatch
 
   defstruct [
     fields:   nil,
@@ -26,8 +26,8 @@ defmodule BusCar.Dsl.MultiMatch do
   end
 end
 
-defimpl Searchable, for: BusCar.Dsl.MultiMatch do
-  alias BusCar.Dsl.MultiMatch
+defimpl Searchable, for: BusCarDsl.MultiMatch do
+  alias BusCarDsl.MultiMatch
 
   @invalids [nil, true, false, ""]
 

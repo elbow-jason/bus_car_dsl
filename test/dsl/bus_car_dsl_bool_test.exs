@@ -1,7 +1,7 @@
 defmodule DslBoolTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Bool
-  alias BusCar.Dsl.Bool
+  doctest BusCarDsl.Bool
+  alias BusCarDsl.Bool
 
   test "bool must" do
     result = Bool.parse([:bool, :must, :term, "apples", "oranges"], %{})

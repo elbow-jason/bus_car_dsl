@@ -1,5 +1,5 @@
-defmodule BusCar.Dsl.Should do
-  use BusCar.Dsl
+defmodule BusCarDsl.Should do
+  use BusCarDsl
 
   @key :should
 

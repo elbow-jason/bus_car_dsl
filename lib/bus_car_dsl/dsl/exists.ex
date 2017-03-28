@@ -1,4 +1,4 @@
-defmodule BusCar.Dsl.Exists do
+defmodule BusCarDsl.Exists do
 
   def parse([:exists, :field | rest], acc) when acc |> is_list do
     parse_list([:exists, :field | rest], acc)

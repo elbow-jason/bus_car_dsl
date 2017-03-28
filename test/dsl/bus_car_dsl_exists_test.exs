@@ -1,7 +1,7 @@
 defmodule BusCarDslExistsTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Exists
-  alias BusCar.Dsl.Exists
+  doctest BusCarDsl.Exists
+  alias BusCarDsl.Exists
 
   test "exists map" do
     result = Exists.parse([:exists, :field, "name"], %{})

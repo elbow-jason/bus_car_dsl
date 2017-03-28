@@ -1,5 +1,5 @@
-defmodule BusCar.Dsl.Query do
-  use BusCar.Dsl
+defmodule BusCarDsl.Query do
+  use BusCarDsl
 
   map_rule(:query, :bool)
   map_rule(:query, :nested)

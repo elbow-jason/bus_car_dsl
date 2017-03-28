@@ -1,7 +1,7 @@
 defmodule BusCarDslTermTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Term
-  alias BusCar.Dsl.Term
+  doctest BusCarDsl.Term
+  alias BusCarDsl.Term
 
   test "term without options" do
     assert Term.parse([:term, "key1", "value1"], %{}) == {[], %{

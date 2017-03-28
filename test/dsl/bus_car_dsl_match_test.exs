@@ -1,7 +1,7 @@
 defmodule BusCarDslMatchTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Match
-  alias BusCar.Dsl.Match
+  doctest BusCarDsl.Match
+  alias BusCarDsl.Match
 
   test "match map" do
     result = Match.parse([:match, "name", "jason"], %{})

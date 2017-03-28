@@ -1,4 +1,4 @@
-defmodule BusCar.Dsl.Wildcard do
-  use BusCar.Dsl.Leaf
+defmodule BusCarDsl.Wildcard do
+  use BusCarDsl.Leaf
   leaf_rule(:wildcard, :value)
 end

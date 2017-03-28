@@ -1,7 +1,7 @@
 defmodule BusCarDslTest do
   use ExUnit.Case
-  doctest BusCar.Dsl
-  alias BusCar.Dsl
+  doctest BusCarDsl
+  alias BusCarDsl, as: Dsl
 
   test "multi bool" do
     assert Dsl.parse([

@@ -1,7 +1,7 @@
 defmodule BusCarDslQueryTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Query
-  alias BusCar.Dsl.Query
+  doctest BusCarDsl.Query
+  alias BusCarDsl.Query
 
   test "query can have a bool" do
     result = Query.parse([

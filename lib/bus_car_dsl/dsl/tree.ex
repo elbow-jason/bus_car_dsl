@@ -1,4 +1,4 @@
-defmodule BusCar.Dsl.Tree do
+defmodule BusCarDsl.Tree do
 
   def stem_leaf(field, opts, default_key, value) do
     %{field => leaf(opts, default_key, value)}

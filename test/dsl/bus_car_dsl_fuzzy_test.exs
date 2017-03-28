@@ -1,7 +1,7 @@
 defmodule BusCarDslFuzzyTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Fuzzy
-  alias BusCar.Dsl.Fuzzy
+  doctest BusCarDsl.Fuzzy
+  alias BusCarDsl.Fuzzy
 
   test "fuzzy map" do
     result = Fuzzy.parse([:fuzzy, "name", "jason"], %{})

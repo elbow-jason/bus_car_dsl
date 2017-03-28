@@ -1,4 +1,4 @@
-defmodule BusCar.Dsl.Range do
+defmodule BusCarDsl.Range do
 
   @comparators [
     :gt,

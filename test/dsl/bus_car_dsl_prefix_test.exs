@@ -1,7 +1,7 @@
 defmodule BusCarDslPrefixTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Prefix
-  alias BusCar.Dsl.Prefix
+  doctest BusCarDsl.Prefix
+  alias BusCarDsl.Prefix
 
   test "prefix map" do
     result = Prefix.parse([:prefix, "name", "s"], %{})

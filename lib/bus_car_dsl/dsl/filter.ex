@@ -1,5 +1,5 @@
-defmodule BusCar.Dsl.Filter do
-  use BusCar.Dsl
+defmodule BusCarDsl.Filter do
+  use BusCarDsl
 
   @key :filter
 

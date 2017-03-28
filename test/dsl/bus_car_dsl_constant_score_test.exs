@@ -1,7 +1,7 @@
 defmodule BusCarDslConstantScoreTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.ConstantScore
-  alias BusCar.Dsl.ConstantScore
+  doctest BusCarDsl.ConstantScore
+  alias BusCarDsl.ConstantScore
 
   test "constant_score can have a filter" do
     result = ConstantScore.parse([

@@ -1,7 +1,7 @@
 defmodule BusCarDslMustNotTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.MustNot
-  alias BusCar.Dsl.MustNot
+  doctest BusCarDsl.MustNot
+  alias BusCarDsl.MustNot
 
   test "must_not list" do
     result = MustNot.parse([:must_not, :term, "name", 34], [])
@@ -10,7 +10,7 @@ defmodule BusCarDslMustNotTest do
   end
 
   test "query bool must_not ... " do
-    result = BusCar.Dsl.parse([:query, :bool, :must_not, :term, "name", 34])
+    result = BusCarDsl.parse([:query, :bool, :must_not, :term, "name", 34])
     expected = %{query: %{bool: %{must_not: [%{term: %{"name" => %{value: 34}}}]}}}
     assert result == expected
   end

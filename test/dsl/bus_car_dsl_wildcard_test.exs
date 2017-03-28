@@ -1,7 +1,7 @@
 defmodule BusCarDslWildcardTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.Wildcard
-  alias BusCar.Dsl.Wildcard
+  doctest BusCarDsl.Wildcard
+  alias BusCarDsl.Wildcard
 
   test "wildcard map" do
     result = Wildcard.parse([:wildcard, "name", "s*"], %{})

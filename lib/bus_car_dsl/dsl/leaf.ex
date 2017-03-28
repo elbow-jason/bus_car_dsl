@@ -1,14 +1,14 @@
-defmodule BusCar.Dsl.Leaf do
+defmodule BusCarDsl.Leaf do
 
   defmacro __using__(_) do
     quote do
-      import BusCar.Dsl.Leaf
+      import BusCarDsl.Leaf
     end
   end
 
   defmacro leaf_rule(root, stem) do
     quote do
-      alias BusCar.Dsl.Tree
+      alias BusCarDsl.Tree
 
       def parse([ unquote(root) | rest ], acc) when acc |> is_map do
         parse_map([ unquote(root) | rest ], acc)

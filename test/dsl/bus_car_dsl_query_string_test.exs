@@ -1,7 +1,7 @@
 defmodule BusCarDslQueryStringTest do
   use ExUnit.Case
-  doctest BusCar.Dsl.QueryString
-  alias BusCar.Dsl.QueryString
+  doctest BusCarDsl.QueryString
+  alias BusCarDsl.QueryString
 
   test "query_string map" do
     result = QueryString.parse([:query_string, ".jason"], %{})

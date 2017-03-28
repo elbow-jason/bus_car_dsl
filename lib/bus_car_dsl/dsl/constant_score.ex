@@ -1,5 +1,5 @@
-defmodule BusCar.Dsl.ConstantScore do
-  use BusCar.Dsl
+defmodule BusCarDsl.ConstantScore do
+  use BusCarDsl
 
   map_rule(:constant_score, :filter)
 

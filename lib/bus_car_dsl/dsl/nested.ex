@@ -1,5 +1,5 @@
-defmodule BusCar.Dsl.Nested do
-  alias BusCar.Dsl.{Nested, Query}
+defmodule BusCarDsl.Nested do
+  alias BusCarDsl.{Nested, Query}
 
   defstruct [
     path:       nil,
@@ -35,8 +35,8 @@ defmodule BusCar.Dsl.Nested do
   end
 end
 
-defimpl Searchable, for: BusCar.Dsl.Nested do
-  alias BusCar.Dsl.Nested
+defimpl Searchable, for: BusCarDsl.Nested do
+  alias BusCarDsl.Nested
 
   @invalids [nil, true, false, ""]
 
