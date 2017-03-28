@@ -1,6 +1,8 @@
 # BusCarDsl
 [![Build Status](https://travis-ci.org/elbow-jason/bus_car_dsl.svg?branch=master)](https://travis-ci.org/elbow-jason/bus_car_dsl)
-**TODO: Add description**
+
+** A Domain Specific Language for composing ElasticSearch queries without all the nesting. **
+
 
 ## Installation
 
