@@ -1,5 +1,5 @@
 defmodule BusCarDsl.Prefix do
-  use BusCarDsl.Leaf
+  use BusCarDsl.Tree.Leaf
   leaf_rule(:prefix, :value)
 
 end

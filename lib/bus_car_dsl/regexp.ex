@@ -1,4 +1,4 @@
 defmodule BusCarDsl.Regexp do
-  use BusCarDsl.Leaf
+  use BusCarDsl.Tree.Leaf
   leaf_rule(:regexp, :value)
 end

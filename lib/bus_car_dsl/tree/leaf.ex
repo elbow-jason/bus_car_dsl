@@ -1,8 +1,8 @@
-defmodule BusCarDsl.Leaf do
+defmodule BusCarDsl.Tree.Leaf do
 
   defmacro __using__(_) do
     quote do
-      import BusCarDsl.Leaf
+      import BusCarDsl.Tree.Leaf
     end
   end
 
