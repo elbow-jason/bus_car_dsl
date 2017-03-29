@@ -11,7 +11,7 @@ by adding `bus_car_dsl` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:bus_car_dsl, "~> 0.1.1"}]
+  [{:bus_car_dsl, "~> 0.1.2"}]
 end
 ```
 
