@@ -3,7 +3,7 @@ defmodule DslBoolTest do
   doctest BusCarDsl.Bool
   alias BusCarDsl.Bool
 
-  test "bool must" do
+  test "parse :bool :must map accumulates correctly" do
     result = Bool.parse([:bool, :must, :term, "apples", "oranges"], %{})
     expected = %{
       bool: %{
@@ -15,7 +15,7 @@ defmodule DslBoolTest do
     assert result == {[], expected}
   end
 
-  test "bool must_not" do
+  test "parse :bool :must_not map accumulates correctly" do
     result = Bool.parse([:bool, :must_not, :term, "apples", "oranges"], %{})
     expected = %{
       bool: %{
@@ -27,7 +27,7 @@ defmodule DslBoolTest do
     assert result == {[], expected}
   end
 
-  test "bool should" do
+  test "parse :bool :should map accumulates correctly" do
     result = Bool.parse([:bool, :should, :term, "apples", "oranges"], %{})
     expected = %{
       bool: %{
@@ -39,7 +39,7 @@ defmodule DslBoolTest do
     assert result == {[], expected}
   end
 
-  test "bool filter" do
+  test "parse :bool :filter map  accumulates correctly" do
     result = Bool.parse([:bool, :filter, :term, "apples", "oranges"], %{})
     expected = %{
       bool: %{
@@ -51,11 +51,11 @@ defmodule DslBoolTest do
     assert result == {[], expected}
   end
 
-  test "stems() includes all the stems" do
+  test "stems() returns all :bool stems" do
     assert Bool.stems() == [:filter, :should, :must_not, :must]
   end
 
-  test "root() is the correct atom" do
+  test "Bool.root() is :bool" do
     assert Bool.root() == :bool
   end
 

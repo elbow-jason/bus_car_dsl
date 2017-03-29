@@ -4,44 +4,44 @@ defmodule BusCarDslFilterTest do
   alias BusCarDsl.Filter
 
 
-  test "parse :match list accumulates correctly" do
+  test "parse :filter :match list accumulates correctly" do
     result = Filter.parse([:filter, :match, "the_key", "the_val"], [])
     assert result == {[], [%{match: %{"the_key" => %{query: "the_val"}}}]}
   end
 
-  test "parse :term list accumulates correctly" do
+  test "parse :filter :term list accumulates correctly" do
     result = Filter.parse([:filter, :term, "the_key", "the_val"], [])
     assert result == {[], [%{term: %{"the_key" => %{value: "the_val"}}}]}
   end
 
-  test "parse :exists :field list accumulates correctly" do
+  test "parse :filter :exists :field list accumulates correctly" do
     result = Filter.parse([:filter, :exists, :field, "the_val"], [])
     assert result == {[], [%{exists: %{field: "the_val"}}]}
   end
 
   # TreeList.rule(@key, :regexp)
 
-  test "parse :prefix list accumulates correctly" do
+  test "parse :filter :prefix list accumulates correctly" do
     result = Filter.parse([:filter, :prefix, "some_field", "the_val"], [])
     assert result == {[], [%{prefix: %{"some_field" => %{value: "the_val"}}}]}
   end
 
-  test "parse :wildcard list accumulates correctly" do
+  test "parse :filter :wildcard list accumulates correctly" do
     result = Filter.parse([:filter, :wildcard, "some_field", "the_val"], [])
     assert result == {[], [%{wildcard: %{"some_field" => %{value: "the_val"}}}]}
   end
 
-  test "parse :range list accumulates correctly" do
+  test "parse :filter :range list accumulates correctly" do
     result = Filter.parse([:filter, :range, "some_field", :gt, 10, :lt, 40], [])
     assert result == {[], [%{range: %{"some_field" => %{gt: 10, lt: 40}}}]}
   end
 
-  test "parse :fuzzy list accumulates correctly" do
+  test "parse :filter :fuzzy list accumulates correctly" do
     result = Filter.parse([:filter, :fuzzy, "some_field", "beef"], [])
     assert result == {[], [%{fuzzy: %{"some_field" => %{value: "beef"}}}]}
   end
 
-  test "parse :regexp list accumulates correctly" do
+  test "parse :filter :regexp list accumulates correctly" do
     result = Filter.parse([:filter, :regexp, "some_field", "regex_here"], [])
     assert result == {[], [%{regexp: %{"some_field" => %{value: "regex_here"}}}]}
   end
@@ -49,22 +49,22 @@ defmodule BusCarDslFilterTest do
   # TreeMap.rule(@key, :match)
   # TreeMap.rule(@key, :term)
 
-  test "parse :range map accumulates correctly" do
+  test "parse :filter :range map accumulates correctly" do
     result = Filter.parse([:filter, :range, "some_field", :gt, 10, :lt, 40], %{})
     assert result == {[], %{filter: %{range: %{"some_field" => %{gt: 10, lt: 40}}}}}
   end
 
-  test "parse :match map accumulates correctly" do
+  test "parse :filter :match map accumulates correctly" do
     result = Filter.parse([:filter, :match, "the_key", "the_val"], %{})
     assert result == {[], %{filter: %{match: %{"the_key" => %{query: "the_val"}}}}}
   end
 
-  test "parse :term map accumulates correctly" do
+  test "parse :filter :term map accumulates correctly" do
     result = Filter.parse([:filter, :term, "the_key", "the_val"], %{})
     assert result == {[], %{filter: %{term: %{"the_key" => %{value: "the_val"}}}}}
   end
 
-  test "stems() includes all the :filter stems" do
+  test "stems() returns the :filter stems" do
     assert Filter.stems() == [
       :term,
       :match,
@@ -80,7 +80,7 @@ defmodule BusCarDslFilterTest do
     ]
   end
 
-  test "root() is the correct atom" do
+  test "Filter.root() is :filter" do
     assert Filter.root() == :filter
   end
 

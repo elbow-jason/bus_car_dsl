@@ -3,23 +3,22 @@ defmodule BusCarDslFuzzyTest do
   doctest BusCarDsl.Fuzzy
   alias BusCarDsl.Fuzzy
 
-  test "fuzzy map" do
+  test "parse :fuzzy map accumulates correctly" do
     result = Fuzzy.parse([:fuzzy, "name", "jason"], %{})
     assert result == {[], %{fuzzy: %{"name" => %{value: "jason"}}}}
   end
 
-  test "fuzzy list" do
+  test "parse :fuzzy list accumulates correctly" do
     result = Fuzzy.parse([:fuzzy, "name", "json"], [])
     assert result == {[], [%{fuzzy: %{"name" => %{value: "json"}}}]}
   end
 
-  test "stems() includes no stems. It's a leaf.'" do
+  test "stems() returns :fuzzy stems" do
     assert Fuzzy.stems() == [:value] # 
   end
 
-  test "root() is the correct atom" do
+  test "Fuzzy.root() is :fuzzy" do
     assert Fuzzy.root() == :fuzzy
   end
-
 
 end
