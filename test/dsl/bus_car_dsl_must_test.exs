@@ -42,7 +42,7 @@ defmodule BusCarDslMustTest do
     assert Must.stems() == [:regexp, :fuzzy, :range, :wildcard, :prefix, :exists, :term, :match]
   end
 
-  test "Match.root() is :match" do
+  test "Must.root() is :must" do
     assert Must.root() == :must
   end
 

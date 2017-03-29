@@ -3,15 +3,23 @@ defmodule BusCarDslWildcardTest do
   doctest BusCarDsl.Wildcard
   alias BusCarDsl.Wildcard
 
-  test "wildcard map" do
+  test "parse :wildcard map" do
     result = Wildcard.parse([:wildcard, "name", "s*"], %{})
     assert result == {[], %{wildcard: %{"name" => %{value: "s*"}}}}
   end
 
-  test "wildcard list" do
+  test "parse :wildcard list" do
     result = Wildcard.parse([:wildcard, "name", "s*"], [])
     assert result == {[], [%{wildcard: %{"name" => %{value: "s*"}}}]}
-    
   end
+
+  test "stems() returns the :wildcard stems" do
+    assert Wildcard.stems() == [:value]
+  end
+
+  test "Wildcard.root() is :wildcard" do
+    assert Wildcard.root() == :wildcard
+  end
+
 
 end

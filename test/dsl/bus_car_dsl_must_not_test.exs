@@ -43,7 +43,7 @@ defmodule BusCarDslMustNotTest do
     assert MustNot.stems() == [:fuzzy, :range, :wildcard, :prefix, :exists, :term, :match]
   end
 
-  test "Match.root() is :match" do
+  test "MustNot.root() is :must_not" do
     assert MustNot.root() == :must_not
   end
 

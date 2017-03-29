@@ -46,5 +46,12 @@ defmodule BusCarDslRangeTest do
     assert result == {[], map }
   end
 
+  test "stems() returns the :range stems" do
+    assert Range.stems() == []
+  end
+  
+  test "Range.root() is :range" do
+    assert Range.root() == :range
+  end
 
 end

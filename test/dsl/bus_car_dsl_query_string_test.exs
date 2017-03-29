@@ -8,11 +8,11 @@ defmodule BusCarDslQueryStringTest do
     assert result == {[],  %{query_string: %{query: "jason AND ruby"}}}
   end
 
-  test "stems() returns the :prefix stems" do
-    assert QueryString.stems() == []
+  test "stems() returns the :query_string stems" do
+    assert QueryString.stems() == [] # there are no stems for query_string
   end
   
-  test "Prefix.root() is :prefix" do
+  test "QueryString.root() is :prefix" do
     assert QueryString.root() == :query_string
   end
 

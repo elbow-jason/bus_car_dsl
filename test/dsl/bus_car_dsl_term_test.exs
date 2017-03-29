@@ -3,62 +3,23 @@ defmodule BusCarDslTermTest do
   doctest BusCarDsl.Term
   alias BusCarDsl.Term
 
-  test "term without options" do
-    assert Term.parse([:term, "key1", "value1"], %{}) == {[], %{
-      :term => %{
-        "key1" => %{value: "value1"},
-      }
-    }}
+  test "parse :term map" do
+    result = Term.parse([:term, "name", "jason"], %{})
+    assert result == {[], %{term: %{"name" => %{value: "jason"}}}}
   end
 
-  test "term with options" do
-    assert Term.parse([
-      :term, "key1", "value1", [boost: 2.0]
-    ], %{}) == {[], %{
-      :term => %{
-        "key1" => %{boost: 2.0, value: "value1"}
-      }
-    }}
+  test "parse :term list" do
+    result = Term.parse([:term, "name", "json"], [])
+    assert result == {[], [%{term: %{"name" => %{value: "json"}}}]}
   end
 
-  test "multi terms list" do
-    assert Term.parse([
-      :term, "key1", "value1",
-      :term, "key2", "value2"
-    ], []) == {[], [
-      %{term: %{"key2" => %{value: "value2"}}},
-      %{term: %{"key1" => %{value: "value1"}}}
-    ]}
+  test "stems() returns the :term stems" do
+    assert Term.stems() == [:value]
   end
 
-  test "multi terms list with options" do
-    assert Term.parse([
-      :term, "key1", "value1", [boost: 2.0],
-      :term, "key2", "value2"
-    ], []) == {[], [
-      %{term: %{"key2" => %{value: "value2"}}},
-      %{term: %{"key1" => %{value: "value1", boost: 2.0}}}
-    ]}
+  test "Term.root() is :term" do
+    assert Term.root() == :term
   end
 
-  test "multi terms list with mixed options" do
-    assert Term.parse([
-      :term, "key1", "value1", [boost: 2.0],
-      :term, "key2", "value2",
-    ], []) == {[], [
-      %{term: %{"key2" => %{value: "value2"}}},
-      %{term: %{"key1" => %{value: "value1", boost: 2.0}}}
-    ]}
-  end
-
-  test "multi terms list with all options" do
-    assert Term.parse([
-      :term, "key1", "value1", [boost: 2.0],
-      :term, "key2", "value2", [boost: 1.1]
-    ], []) == {[], [
-      %{term: %{"key2" => %{value: "value2", boost: 1.1}}},
-      %{term: %{"key1" => %{value: "value1", boost: 2.0}}}
-    ]}
-  end
 
 end

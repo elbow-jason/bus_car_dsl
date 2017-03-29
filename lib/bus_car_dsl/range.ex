@@ -1,4 +1,5 @@
 defmodule BusCarDsl.Range do
+  use BusCarDsl.Element
 
   @comparators [
     :gt,
