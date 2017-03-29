@@ -19,3 +19,11 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/bus_car_dsl](https://hexdocs.pm/bus_car_dsl).
 
+## Examples
+
+```elixir
+iex> BusCarDsl.parse([:query, :bool, :must, :range, "age", :gte, 18, :must_not, :match, "likes", "dogs", [boost: 2.0], :fuzzy, "name", "jason", [fuzziness: 2]])
+%{query: %{bool: %{must: [%{range: %{"age" => %{gte: 18}}}],
+      must_not: [%{fuzzy: %{"name" => %{fuzziness: 2, value: "jason"}}},
+       %{match: %{"likes" => %{boost: 2.0, query: "dogs"}}}]}}}
+```
