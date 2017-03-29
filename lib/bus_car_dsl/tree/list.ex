@@ -8,7 +8,8 @@ defmodule BusCarDsl.Tree.List do
 
   defmacro rule(root, stem) do
     quote do
-      Module.put_attribute __MODULE__, :stems, unquote(stem)
+      Module.register_attribute __MODULE__, :stems, accumulate: true
+      @stems unquote(stem)
       Module.put_attribute(__MODULE__, :handler, BusCarDsl.Tree.get_handler(unquote(stem)))
       defp parse_list([unquote(root), unquote(stem) | rest], acc) do
         {rest, parsed} = @handler.parse([unquote(stem) | rest], [])

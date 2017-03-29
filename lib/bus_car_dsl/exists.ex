@@ -1,6 +1,8 @@
 defmodule BusCarDsl.Exists do
   use BusCarDsl.Element
 
+  @stems :field #accumulates: true
+
   def parse([:exists, :field | rest], acc) when acc |> is_list do
     parse_list([:exists, :field | rest], acc)
   end

@@ -9,6 +9,7 @@ defmodule BusCarDsl.Tree.Leaf do
   defmacro rule(root, stem) do
     quote do
       alias BusCarDsl.Tree
+      @stems unquote(stem)
 
       def parse([ unquote(root) | rest ], acc) when acc |> is_map do
         parse_map([ unquote(root) | rest ], acc)

@@ -2,7 +2,6 @@ defmodule BusCarDsl.Element do
 
   defmacro __using__(_opts) do
     quote do
-      alias BusCarDsl
       require BusCarDsl.Tree.{Leaf, BranchList, List, Map}
       alias BusCarDsl.Tree.Leaf,        as: TreeLeaf
       alias BusCarDsl.Tree.BranchList,  as: TreeBranchList
@@ -15,9 +14,6 @@ defmodule BusCarDsl.Element do
       Module.register_attribute __MODULE__, :stems, accumulate: true
 
       @before_compile BusCarDsl.Element
-
-      def stems, do: @stems
-      def root,  do: @root
 
     end
   end
@@ -37,9 +33,9 @@ defmodule BusCarDsl.Element do
       if Module.defines?(__MODULE__, {:parse_map, 2}, :defp) do
         def parse([@root, stem | rest], acc) when is_map(acc) do
           if stem in @stems do
-            parse_map([@root, stem | rest], acc)
+            parse_map([@root, stem | rest], acc) #there are more elements under this root.
           else
-            {[ stem | rest ], acc}
+            {[ stem | rest ], acc} # remove root from sequence
           end
         end
       end
@@ -56,6 +52,9 @@ defmodule BusCarDsl.Element do
       def parse([@root | rest], acc) do
         {rest, acc}
       end
+
+      def stems, do: @stems
+      def root,  do: @root
 
     end
   end

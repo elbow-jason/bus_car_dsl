@@ -15,4 +15,12 @@ defmodule BusCarDslExistsTest do
     assert result == {[], expected_list}
   end
 
+  test "stems() includes all the stems" do
+    assert Exists.stems() == [:field]
+  end
+
+  test "root() is the correct atom" do
+    assert Exists.root() == :exists
+  end
+
 end

@@ -51,4 +51,12 @@ defmodule DslBoolTest do
     assert result == {[], expected}
   end
 
+  test "stems() includes all the stems" do
+    assert Bool.stems() == [:filter, :should, :must_not, :must]
+  end
+
+  test "root() is the correct atom" do
+    assert Bool.root() == :bool
+  end
+
 end

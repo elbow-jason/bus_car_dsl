@@ -13,4 +13,13 @@ defmodule BusCarDslFuzzyTest do
     assert result == {[], [%{fuzzy: %{"name" => %{value: "json"}}}]}
   end
 
+  test "stems() includes no stems. It's a leaf.'" do
+    assert Fuzzy.stems() == [:value] # 
+  end
+
+  test "root() is the correct atom" do
+    assert Fuzzy.root() == :fuzzy
+  end
+
+
 end

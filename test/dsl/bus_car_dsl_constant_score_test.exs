@@ -16,4 +16,13 @@ defmodule BusCarDslConstantScoreTest do
       }
     }}
   end
+  
+  test "stems() includes all the stems" do
+    assert ConstantScore.stems() == [:filter]
+  end
+
+  test "root() is the correct atom" do
+    assert ConstantScore.root() == :constant_score
+  end
+
 end

@@ -12,4 +12,13 @@ defmodule BusCarDslMatchTest do
     result = Match.parse([:match, "name", "json"], [])
     assert result == {[], [%{match: %{"name" => %{query: "json"}}}]}
   end
+
+  test "stems() includes all the stems" do
+    assert Match.stems() == [:query, :_all]
+  end
+
+  test "root() is the correct atom" do
+    assert Match.root() == :match
+  end
+
 end
