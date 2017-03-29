@@ -1,4 +1,4 @@
 defmodule BusCarDsl.Term do
-  use BusCarDsl.Tree.Leaf
-  leaf_rule(:term, :value)
+  use BusCarDsl.Element
+  TreeLeaf.rule(:term, :value)
 end

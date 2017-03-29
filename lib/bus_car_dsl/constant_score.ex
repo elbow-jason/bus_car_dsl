@@ -1,6 +1,6 @@
 defmodule BusCarDsl.ConstantScore do
-  use BusCarDsl
+  use BusCarDsl.Element
 
-  map_rule(:constant_score, :filter)
+  TreeMap.rule(:constant_score, :filter)
 
 end

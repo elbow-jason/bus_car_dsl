@@ -1,4 +1,5 @@
 defmodule BusCarDsl.Exists do
+  use BusCarDsl.Element
 
   def parse([:exists, :field | rest], acc) when acc |> is_list do
     parse_list([:exists, :field | rest], acc)
@@ -6,8 +7,8 @@ defmodule BusCarDsl.Exists do
   def parse([:exists, :field | rest], acc) when acc |> is_map do
     parse_map([:exists, :field | rest], acc)
   end
-  def parse(rest, acc) do
-    {rest, acc}
+  def parse([], acc) do
+    {[], acc}
   end
 
   defp parse_list([:exists, :field, field | rest], acc) do

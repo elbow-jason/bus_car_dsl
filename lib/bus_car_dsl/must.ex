@@ -1,15 +1,15 @@
 defmodule BusCarDsl.Must do
-  use BusCarDsl
+  use BusCarDsl.Element
 
   @key :must
 
-  list_rule(@key, :match)
-  list_rule(@key, :term)
-  list_rule(@key, :exists)
-  list_rule(@key, :prefix)
-  list_rule(@key, :wildcard)
-  list_rule(@key, :range)
-  list_rule(@key, :fuzzy)
-  list_rule(@key, :regexp)
+  TreeList.rule(@key, :match)
+  TreeList.rule(@key, :term)
+  TreeList.rule(@key, :exists)
+  TreeList.rule(@key, :prefix)
+  TreeList.rule(@key, :wildcard)
+  TreeList.rule(@key, :range)
+  TreeList.rule(@key, :fuzzy)
+  TreeList.rule(@key, :regexp)
 
 end

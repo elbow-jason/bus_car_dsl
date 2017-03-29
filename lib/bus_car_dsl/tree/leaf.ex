@@ -2,11 +2,11 @@ defmodule BusCarDsl.Tree.Leaf do
 
   defmacro __using__(_) do
     quote do
-      import BusCarDsl.Tree.Leaf
+      alias BusCarDsl.Tree.Leaf
     end
   end
 
-  defmacro leaf_rule(root, stem) do
+  defmacro rule(root, stem) do
     quote do
       alias BusCarDsl.Tree
 

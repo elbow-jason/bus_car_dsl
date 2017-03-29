@@ -1,9 +1,9 @@
 defmodule BusCarDsl.Bool do
-  use BusCarDsl
+  use BusCarDsl.Element
 
-  branch_list_rule(:bool, :must)
-  branch_list_rule(:bool, :must_not)
-  branch_list_rule(:bool, :should)
-  branch_list_rule(:bool, :filter)
+  TreeBranchList.rule(:bool, :must)
+  TreeBranchList.rule(:bool, :must_not)
+  TreeBranchList.rule(:bool, :should)
+  TreeBranchList.rule(:bool, :filter)
 
 end
