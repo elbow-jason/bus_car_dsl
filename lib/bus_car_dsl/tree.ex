@@ -15,8 +15,10 @@ defmodule BusCarDsl.Tree do
     {Dsl.Prefix, :prefix},
     {Dsl.Regexp, :regexp},
     {Dsl.Should, :should},
+    {Dsl.Source, :source},
     {Dsl.MustNot, :must_not},
     {Dsl.Wildcard, :wildcard},
+    {Dsl.Highlight, :highlight},
     {Dsl.QueryString, :query_string},
     {Dsl.ConstantScore, :constant_score},
   ]

@@ -53,8 +53,13 @@ defmodule BusCarDsl.Element do
         {rest, acc}
       end
 
-      def stems, do: @stems
-      def root,  do: @root
+      if !Module.defines?(__MODULE__, {:stems, 0}, :def) do
+        def stems, do: @stems
+      end
+
+      if !Module.defines?(__MODULE__, {:root, 0}, :def) do
+        def root,  do: @root
+      end
 
     end
   end
