@@ -16,7 +16,7 @@ defmodule BusCarDsl.Range do
     parse_list([:range | rest], acc)
   end
 
-  defp parse_list([:range | rest ], acc) do
+  defp parse_list([:range | rest ], acc) when is_list(rest) do
     {rest, submap} = parse_map([:range | rest], %{})
     {rest, [ submap | acc ]}
   end
