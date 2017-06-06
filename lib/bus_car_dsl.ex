@@ -9,7 +9,10 @@ defmodule BusCarDsl do
     {rest, acc} = BusCarDsl.Query.parse([:query | rest], acc)
     parse(rest, acc)
   end
-
+  def parse([:size | rest ], acc) do
+    {rest, acc} = BusCarDsl.Size.parse([:size | rest], acc)
+    parse(rest, acc)
+  end
 
 
   # defmacro stem_rule(root, stem) do
