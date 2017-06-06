@@ -7,7 +7,7 @@ defmodule BusCarDslSizeTest do
     assert Size.parse([:size, 100], %{}) == {[], %{size: 100}}
   end
 
-  test "stems() returns the :should stems" do
+  test "stems() returns the :size stems" do
     assert Size.stems() ==  []
   end
 
@@ -15,7 +15,7 @@ defmodule BusCarDslSizeTest do
     assert Size.root() == :size
   end
 
-  test "compound parse works" do
+  test "compound :size parse works" do
     expected = %{
       size: 1,
       query: %{

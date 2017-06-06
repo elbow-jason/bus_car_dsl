@@ -14,6 +14,11 @@ defmodule BusCarDsl do
     parse(rest, acc)
   end
 
+  def parse([:from | rest ], acc) do
+    {rest, acc} = BusCarDsl.From.parse([:from | rest], acc)
+    parse(rest, acc)
+  end
+
 
   # defmacro stem_rule(root, stem) do
   #   quote do
