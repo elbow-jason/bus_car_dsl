@@ -19,6 +19,11 @@ defmodule BusCarDsl do
     parse(rest, acc)
   end
 
+  def parse([:sort | rest ], acc) do
+    {rest, acc} = BusCarDsl.Sort.parse([:sort | rest], acc)
+    parse(rest, acc)
+  end
+
 
   # defmacro stem_rule(root, stem) do
   #   quote do
